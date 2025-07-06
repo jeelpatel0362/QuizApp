@@ -16,7 +16,8 @@ QuizApp is an Android application that provides users with an engaging trivia qu
 | <img src="screenshots/splash.png" width="200"> | <img src="screenshots/home.png" width="200"> | <img src="screenshots/categories.png" width="200"> | <img src="screenshots/quiz.png" width="200"> | <img src="screenshots/results.png" width="200"> |
 
 ## Demo Video 🎥
-[![QuizApp Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://youtu.be/YOUR_VIDEO_ID)
+
+https://github.com/user-attachments/assets/1cb1d895-c1f4-44e6-816b-3654414caeef
 
 ## Technologies Used 🛠️
 - **Kotlin** - Primary programming language  
