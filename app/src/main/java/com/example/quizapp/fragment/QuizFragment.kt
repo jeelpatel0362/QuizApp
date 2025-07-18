@@ -1,21 +1,21 @@
 package com.example.quizapp.fragment
 
 import Question
+import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
-
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-
 import com.example.quizapp.R
 import com.example.quizapp.ViewModel.QuizViewModel
 import com.example.quizapp.ViewModel.ViewModelFactory
-
 import com.example.quizapp.data.repository.QuizRepository
 import com.example.quizapp.utils.decodeHtmlEntities
 import com.example.quizapp.utils.showToast
@@ -114,12 +114,17 @@ class QuizFragment : Fragment() {
     }
 
     private fun displayQuestion(question: Question) {
+        answersRadioGroup.isEnabled = true
+        submitButton.isEnabled = true
+
         questionText.text = question.question.decodeHtmlEntities()
         answersRadioGroup.removeAllViews()
         question.decodedAllAnswers.forEach { answer ->
             RadioButton(requireContext()).apply {
                 text = answer
                 id = View.generateViewId()
+                setTextColor(Color.BLACK)
+                setBackgroundColor(Color.TRANSPARENT)
                 answersRadioGroup.addView(this)
             }
         }
@@ -148,11 +153,36 @@ class QuizFragment : Fragment() {
         if (selectedId != -1) {
             val selectedAnswer = requireView().findViewById<RadioButton>(selectedId).text.toString()
             val isCorrect = viewModel.checkAnswer(selectedAnswer)
+
+            highlightAnswersByTextColor(isCorrect, selectedAnswer)
+
             showToast(if (isCorrect) "Correct!" else "Wrong answer!")
-            viewModel.nextQuestion()
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                viewModel.nextQuestion()
+            }, 1000)
         } else {
             showToast("Please select an answer")
         }
+    }
+
+    private fun highlightAnswersByTextColor(isCorrect: Boolean, selectedAnswer: String) {
+        val currentQuestion = viewModel.currentQuestion.value ?: return
+        val correctAnswer = currentQuestion.correct_answer.decodeHtmlEntities()
+
+        for (i in 0 until answersRadioGroup.childCount) {
+            val radioButton = answersRadioGroup.getChildAt(i) as RadioButton
+            val answer = radioButton.text.toString()
+
+            when {
+                answer == correctAnswer -> radioButton.setTextColor(Color.GREEN)
+                !isCorrect && answer == selectedAnswer -> radioButton.setTextColor(Color.RED)
+                else -> radioButton.setTextColor(Color.GRAY)
+            }
+        }
+
+        answersRadioGroup.isEnabled = false
+        submitButton.isEnabled = false
     }
 
     private fun retryQuiz() {
@@ -177,11 +207,13 @@ class QuizFragment : Fragment() {
         val totalQuestions = viewModel.questions.value?.size ?: 10
         val correctAnswers = score / 10
         val wrongAnswers = totalQuestions - correctAnswers
+        val questions = viewModel.questions.value ?: emptyList()
 
         val args = Bundle().apply {
             putInt("score", score)
             putInt("correctAnswers", correctAnswers)
             putInt("wrongAnswers", wrongAnswers)
+            putParcelableArrayList("questions", ArrayList(questions))
         }
         findNavController().navigate(
             R.id.action_quizFragment_to_resultsFragment,

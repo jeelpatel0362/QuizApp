@@ -10,6 +10,7 @@ import androidx.core.os.postDelayed
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.quizapp.R
+import com.example.quizapp.utils.AuthHelper
 
 
 class SplashScreen : AppCompatActivity() {
@@ -23,9 +24,16 @@ class SplashScreen : AppCompatActivity() {
             insets
         }
 
+        val authHelper = AuthHelper(this)
+
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this@SplashScreen, MainActivity::class.java))
+            val destination = if (authHelper.isUserLoggedIn()) {
+                MainActivity::class.java
+            } else {
+                LoginActivity::class.java
+            }
+            startActivity(Intent(this, destination))
             finish()
-        }, 2000)
+        }, 3000)
     }
 }

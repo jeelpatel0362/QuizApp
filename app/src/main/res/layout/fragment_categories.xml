@@ -10,6 +10,13 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <Button
+            android:id="@+id/start_quiz_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/start_quiz"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,11 +63,5 @@
                 android:text="@string/hard"/>
         </RadioGroup>
 
-        <Button
-            android:id="@+id/start_quiz_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/start_quiz"/>
     </LinearLayout>
 </ScrollView>
