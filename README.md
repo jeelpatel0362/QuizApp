@@ -17,7 +17,7 @@ QuizApp is an Android application that provides users with an engaging trivia qu
 
 | Home Screen | Categories | Quiz | Results | 
 |---------------|-------------|------------|------|
-|  <img src="https://github.com/user-attachments/assets/45c84670-048d-4088-8c6b-8d41e45152fe" width="200"> | <img src="https://github.com/user-attachments/assets/744dada1-44bc-4f5b-8573-1c2f32c0d694" width="200"> | <img src="https://github.com/user-attachments/assets/7b1b0687-afab-4304-9291-004f6a30733b" width="200"> | <img src="https://github.com/user-attachments/assets/7b1b0687-afab-4304-9291-004f6a30733b" width="200"> | 
+|  <img src="https://github.com/user-attachments/assets/45c84670-048d-4088-8c6b-8d41e45152fe" width="200"> | <img src="https://github.com/user-attachments/assets/744dada1-44bc-4f5b-8573-1c2f32c0d694" width="200"> | <img src="https://github.com/user-attachments/assets/45ed7dc9-c2ee-46cf-8faa-63d37c242a8d" width="200"> | <img src="https://github.com/user-attachments/assets/09b90c8f-3a02-4fe8-898e-ff57ee12835d" width="200"> |
 
 ## Demo Video 🎥
 
