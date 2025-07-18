@@ -16,9 +16,9 @@ QuizApp is an Android application that provides users with an engaging trivia qu
 |---------------|-------------|------------|------|---------|
 | <img src="https://github.com/user-attachments/assets/bd351be0-4973-4408-96f9-7cab1d3da4ad" width="200"> | <img src="https://github.com/user-attachments/assets/45c84670-048d-4088-8c6b-8d41e45152fe" width="200"> | <img src="https://github.com/user-attachments/assets/744dada1-44bc-4f5b-8573-1c2f32c0d694" width="200"> | <img src="https://github.com/user-attachments/assets/7acfa892-e265-49fe-b1ab-7e55f8a7933d" width="200"> | <img src="https://github.com/user-attachments/assets/db04f974-5095-4900-bd06-6c07adf0fd30" width="200"> |
 
-| Home Screen | Home Screen | Categories | Quiz | Results |
-|---------------|-------------|------------|------|---------|
-|  <img src="https://github.com/user-attachments/assets/45c84670-048d-4088-8c6b-8d41e45152fe" width="200"> | <img src="https://github.com/user-attachments/assets/45c84670-048d-4088-8c6b-8d41e45152fe" width="200"> | <img src="https://github.com/user-attachments/assets/744dada1-44bc-4f5b-8573-1c2f32c0d694" width="200"> | <img src="https://github.com/user-attachments/assets/7b1b0687-afab-4304-9291-004f6a30733b" width="200"> | <img src="https://github.com/user-attachments/assets/db04f974-5095-4900-bd06-6c07adf0fd30" width="200"> |
+| Home Screen | Categories | Quiz | Rsults | 
+|---------------|-------------|------------|------|
+|  <img src="https://github.com/user-attachments/assets/45c84670-048d-4088-8c6b-8d41e45152fe" width="200"> | <img src="https://github.com/user-attachments/assets/45c84670-048d-4088-8c6b-8d41e45152fe" width="200"> | <img src="https://github.com/user-attachments/assets/744dada1-44bc-4f5b-8573-1c2f32c0d694" width="200"> | <img src="https://github.com/user-attachments/assets/7b1b0687-afab-4304-9291-004f6a30733b" width="200"> | 
 
 ## Demo Video 🎥
 
